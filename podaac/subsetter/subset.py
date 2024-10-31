@@ -1185,8 +1185,9 @@ def subset(file_to_subset: str, bbox: np.ndarray, output_file: str,
     file_to_subset : string
         The location of the file which will be subset
     bbox : np.ndarray
-        The chosen bounding box. This is a tuple of tuples formatted
-        as such: ((west, east), (south, north)). The assumption is that
+        The chosen bounding box. This is a numpy array of shape (2, 2),
+        e.g., converted from a tuple of tuples, formatted
+        as: np.array(((west, east), (south, north))). The assumption is that
         the valid range is ((-180, 180), (-90, 90)). This will be
         transformed as appropriate if the actual longitude range is
         0-360.
